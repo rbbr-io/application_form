@@ -35,6 +35,15 @@ module ApplicationForm
     def _permitted_args
       @_permitted_args || (superclass.respond_to?(:_permitted_args) && superclass._permitted_args) || []
     end
+
+    def check(name, block, field = :base)
+      validate do |form|
+        if !block.call(form)
+          key = "#{self.class.table_name.singularize}.errors.#{name}"
+          form.add_error_key(field, key)
+        end
+      end
+    end
   end
 
   def update(attrs = {})
@@ -54,5 +63,22 @@ module ApplicationForm
 
   def permit_attrs(attrs)
     attrs.respond_to?(:permit) ? attrs.send(:permit, self.class._permitted_args) : attrs
+  end
+
+  def first_error_message
+    errors&.full_messages&.first
+  end
+
+  def checks_passed?
+    valid?
+  end
+
+  def first_failed_check
+    errors.details[:base].first[:error].to_s
+  end
+
+  def assign_attrs(attrs)
+    assign_attributes(attrs)
+    self
   end
 end

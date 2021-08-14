@@ -41,7 +41,7 @@ or with namespace model
 
     $ rails g application_form:form admin_post --model=blog/post
 
-### Example
+### Basic usage
 
 ```ruby
 # app/forms/user_sign_up_form.rb
@@ -72,6 +72,49 @@ In some cases it is necessary to use ActiveRecord object directly without form. 
 user = User.find(params[:id])
 form = user.becomes(UserSignUpForm)
 ```
+
+### Checks
+
+Checks are build on top of Rails validations. They are semantically separated from validations, because we treat them as business logic checks, not as data validation.
+
+```ruby
+class ReservationCreateForm < Reservation
+  include ApplicationForm
+
+  permit :user_id, :vehicle_id, :start_at, :end_at, :pickup_location_id, :return_location_id
+
+  check :max_number_of_reservations_reached, ->(form) { !form.user&.reservations_limit_reached? }
+  check :car_is_on_maintenance, ->(form) { form.vehicle&.reservable? }
+end
+
+# In controller:
+form = ReservationCreateForm.new(prepared_params)
+
+if form.checks_passed?
+  # ...
+else
+  render_error!(form.first_failed_check) # form.first_failed_check returns "max_number_of_reservations_reached"
+end
+```
+
+You can also attach check to a specific field:
+
+```
+check :end_at_must_be_greater_then_start_at, ->(form) { form.end_at > form.start_at }, :end_at
+```
+
+In this case it will work as a regular validation.
+
+### `assign_atrs`
+
+It works as regular `assign_attributes` but it also returns the object, so that you can chain it:
+
+```ruby
+form = current_user.becomes(UserApplyReferralProgramForm)
+                   .assign_attrs(registration_referral_code: referral_code)
+```
+
+It is a usual pattern when you use for in `#update` action.
 
 ## Development
 
