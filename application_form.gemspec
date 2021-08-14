@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['nemytchenko@gmail.com']
 
   spec.summary       = 'Painless forms for ActiveRecord'
-  spec.description   = 'Inheritance based lightweight forms solution'
+  spec.description   = 'Lightweight inheritance based forms solution'
   spec.homepage      = 'https://github.com/rbbr_io/application_form'
   spec.license       = 'MIT'
   spec.required_ruby_version = Gem::Requirement.new('>= 2.3.0')
