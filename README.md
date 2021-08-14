@@ -66,7 +66,14 @@ class UserSignUpForm < User
 end
 ```
 
-In some cases it is necessary to use ActiveRecord object directly without form. For such cases conveniently to use method `become()` (built-in ActiveRecord):
+```
+form = UserSignUpForm.new(user_params)
+form.valid?
+```
+
+### Usage with `becomes`
+
+In some cases it is necessary to use ActiveRecord object directly without form. For such cases conveniently to use method `becomes()` (built-in ActiveRecord):
 
 ```ruby
 user = User.find(params[:id])
@@ -105,7 +112,7 @@ check :end_at_must_be_greater_then_start_at, ->(form) { form.end_at > form.start
 
 In this case it will work as a regular validation.
 
-### `assign_atrs`
+### `assign_attrs`
 
 It works as regular `assign_attributes` but it also returns the object, so that you can chain it:
 
