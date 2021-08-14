@@ -77,7 +77,8 @@ module ApplicationForm
     errors.details[:base].first[:error].to_s
   end
 
-  def assign_attrs(attrs)
+  def assign_attrs(attrsibutes)
+    attrs = ActiveSupport::HashWithIndifferentAccess.new(attributes)
     assign_attributes(attrs)
     self
   end
