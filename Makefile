@@ -13,4 +13,10 @@ lint:
 release:
 	bundle exec rake release
 
+build:
+	bundle exec rake build
+
+push:
+	git push origin master
+
 .PHONY: test
