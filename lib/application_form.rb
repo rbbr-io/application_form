@@ -39,8 +39,8 @@ module ApplicationForm
       validate do |form|
         if !block.call(form)
           entity_name = self.class.superclass.to_s.tableize.split('/').last.singularize
-          key = "#{entity_name}.errors.#{key}"
-          form.add_error_key(field, key)
+          full_key = "#{entity_name}.errors.#{key}"
+          form.add_error_key(field, full_key)
         end
       end
     end
