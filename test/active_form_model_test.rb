@@ -2,7 +2,7 @@
 
 require 'test_helper'
 
-class ActiveFormModelTest < Minitest::Test
+class ApplicationFormTest < Minitest::Test
   class User
     include ActiveModel::Model
     attr_accessor :valid_attribute, :invalid_attribute
@@ -14,7 +14,7 @@ class ActiveFormModelTest < Minitest::Test
   end
 
   class UserForm < User
-    include ActiveFormModel
+    include ApplicationForm
     permit :valid_attribute
   end
 

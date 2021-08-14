@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in active_form_model.gemspec
+# Specify your gem's dependencies in application_form.gemspec
 gemspec
 
 gem 'minitest', '~> 5.0'

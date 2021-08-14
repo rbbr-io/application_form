@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module ActiveFormModel
+module ApplicationForm
   module Generators
     class FormGenerator < ::Rails::Generators::NamedBase
       class_option :model, type: :string

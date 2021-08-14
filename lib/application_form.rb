@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'appliction_form/version'
+require 'application_form/version'
 require 'active_support/concern'
 
 module ApplicationForm

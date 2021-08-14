@@ -4,7 +4,7 @@ require_relative 'lib/application_form/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'application_form'
-  spec.version       = ActiveFormModel::VERSION
+  spec.version       = ApplicationForm::VERSION
   spec.authors       = ['Kirill Mokevnin', 'Ivan Nemytchenko']
   spec.email         = ['nemytchenko@gmail.com']
 
