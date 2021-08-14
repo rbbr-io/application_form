@@ -1,23 +1,21 @@
 # frozen_string_literal: true
 
-require_relative 'lib/active_form_model/version'
+require_relative 'lib/application_form/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'active_form_model'
+  spec.name          = 'application_form'
   spec.version       = ActiveFormModel::VERSION
-  spec.authors       = ['Kirill']
-  spec.email         = ['mokevnin@gmail.com']
+  spec.authors       = ['Kirill Mokevnin', 'Ivan Nemytchenko']
+  spec.email         = ['nemytchenko@gmail.com']
 
   spec.summary       = 'Painless forms for ActiveRecord'
-  spec.description   = 'Based on inheritance'
-  spec.homepage      = 'https://github.com/Hexlet/active_form_model'
+  spec.description   = 'Inheritance based lightweight forms solution'
+  spec.homepage      = 'https://github.com/rbbr_io/application_form'
   spec.license       = 'MIT'
   spec.required_ruby_version = Gem::Requirement.new('>= 2.3.0')
 
-  # spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
-
   spec.metadata['homepage_uri'] = spec.homepage
-  spec.metadata['source_code_uri'] = 'https://github.com/Hexlet/form-model.git'
+  spec.metadata['source_code_uri'] = 'https://github.com/rbbr_io/application_form.git'
   # spec.metadata["changelog_uri"] = "TODO: Put your gem's CHANGELOG.md URL here."
 
   # Specify which files should be added to the gem when it is released.

@@ -1,6 +1,6 @@
-# ActiveFormModel
+# ApplicationForm
 
-[![github action status](https://github.com/Hexlet/active_form_model/workflows/main/badge.svg)](https://actions-badge.atrox.dev/hexlet/hexlet-cv/goto)
+![github action status](https://github.com/rbbr_io/application_form/workflows/main/badge.svg)
 
 Painless forms for ActiveRecord. Based on Inheritance. Included:
 
@@ -13,7 +13,7 @@ Painless forms for ActiveRecord. Based on Inheritance. Included:
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'active_form_model'
+gem 'application_form'
 ```
 
 And then execute:
@@ -22,7 +22,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install active_form_model
+    $ gem install application_form
 
 ## Usage
 
@@ -35,18 +35,18 @@ Or install it yourself as:
 
 Use the supplied generator to generate forms:
 
-    $ rails g active_form_model:form sign_up --model=user
+    $ rails g application_form:form sign_up --model=user
 
 or with namespace model
 
-    $ rails g active_form_model:form admin_post --model=blog/post
+    $ rails g application_form:form admin_post --model=blog/post
 
 ### Example
 
 ```ruby
 # app/forms/user_sign_up_form.rb
 class UserSignUpForm < User
-  include ActiveFormModel
+  include ApplicationForm
 
   # list all the permitted params
   permit :first_name, :email, :password
@@ -81,7 +81,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/active_form_model. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/active_form_model/blob/master/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/rbbr_io/application_form. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/rbbr_io/application_form/blob/master/CODE_OF_CONDUCT.md).
 
 
 ## License

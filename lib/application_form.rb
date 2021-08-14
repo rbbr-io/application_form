@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-require 'active_form_model/version'
+require 'appliction_form/version'
 require 'active_support/concern'
 
-module ActiveFormModel
+module ApplicationForm
   class Error < StandardError; end
 
   extend ActiveSupport::Concern
