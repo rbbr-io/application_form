@@ -24,9 +24,8 @@ module ApplicationForm
   module ClassMethods
     delegate :sti_name, to: :superclass
     delegate :human_attribute_name, to: :superclass
-    # NOTE: too many side effects if it is enabled
-    # examples: form names, translations
-    # delegate :name, to: :superclass
+    # NOTE: Controvertial thing. More details: https://github.com/Hexlet/active_form_model/issues/10
+    delegate :name, to: :superclass
 
     def permit(*args)
       @_permitted_args = args
