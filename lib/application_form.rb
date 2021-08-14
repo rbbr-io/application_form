@@ -35,10 +35,11 @@ module ApplicationForm
       @_permitted_args || (superclass.respond_to?(:_permitted_args) && superclass._permitted_args) || []
     end
 
-    def check(name, block, field = :base)
+    def check(key, block, field = :base)
       validate do |form|
         if !block.call(form)
-          key = "#{self.class.table_name.singularize}.errors.#{name}"
+          entity_name = self.class.superclass.to_s.tableize.split('/').last.singularize
+          key = "#{entity_name}.errors.#{key}"
           form.add_error_key(field, key)
         end
       end

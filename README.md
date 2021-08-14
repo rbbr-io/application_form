@@ -100,13 +100,13 @@ form = ReservationCreateForm.new(prepared_params)
 if form.checks_passed?
   # ...
 else
-  render_error!(form.first_failed_check) # form.first_failed_check returns "max_number_of_reservations_reached"
+  render_error!(form.first_failed_check) # form.first_failed_check returns "reservation.error.max_number_of_reservations_reached"
 end
 ```
 
-You can also attach check to a specific field:
+You can also assign check to a specific field:
 
-```
+```ruby
 check :end_at_must_be_greater_then_start_at, ->(form) { form.end_at > form.start_at }, :end_at
 ```
 
