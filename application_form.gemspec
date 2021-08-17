@@ -10,12 +10,12 @@ Gem::Specification.new do |spec|
 
   spec.summary       = 'Painless forms for ActiveRecord'
   spec.description   = 'Lightweight inheritance based forms solution'
-  spec.homepage      = 'https://github.com/rbbr_io/application_form'
+  spec.homepage      = 'https://github.com/rbbr-io/application_form'
   spec.license       = 'MIT'
   spec.required_ruby_version = Gem::Requirement.new('>= 2.3.0')
 
   spec.metadata['homepage_uri'] = spec.homepage
-  spec.metadata['source_code_uri'] = 'https://github.com/rbbr_io/application_form.git'
+  spec.metadata['source_code_uri'] = 'https://github.com/rbbr-io/application_form.git'
   # spec.metadata["changelog_uri"] = "TODO: Put your gem's CHANGELOG.md URL here."
 
   # Specify which files should be added to the gem when it is released.
